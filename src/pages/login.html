@@ -4,7 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
- 
+  <style>
+    @media (max-width: 500px) {
+    nav {
+        display: none !important; 
+    }
+}
+
+@media (max-width: 500px) {
+    nav#mobile-menu {
+        display: block !important;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+    }
+}
+
+footer.mobile-menu {
+    display: none; 
+}
+  </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/src/service/login.js" defer></script>
   <link rel="stylesheet" href="/src/css/menu.css"> 
