@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+ 
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="/src/service/login.js" defer></script>
+  <link rel="stylesheet" href="/src/css/menu.css"> 
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+</head>
+<body class="bg-[#E8E3DD]">
+  <nav class="bg-white py-4 text-white flex flex-wrap justify-around items-center px-6 border-b border-[#2A661E]">
+
+    <div class="flex items-center space-x-4">
+      <!-- <img src="logo.png" alt="Logo Limounada" class="w-10 h-10"> -->
+      <a href="https://bento.me/limounada" class="text-xl font-bold text-[#2A661E] hover:text-[#41E920] whitespace-nowrap">
+        Limounada
+      </a>
+    </div>
+  
+    <div class="flex flex-wrap space-x-4 md:space-x-6 mt-4 md:mt-0">
+      <a href="/index.html" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Home</a>
+      <a href="https://bento.me/limounada" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Projetos</a>
+      <a href="sobre.html" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Sobre</a>
+      <a href="skill.html" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Skill</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgh8DyMzGOeK01ZipsN2ubfv3e6YRKE84mjc5YSopOp4Zkww/viewform?pli=1" target="_blank" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Orçamento</a>
+    </div>
+  </nav>
+
+  <main class="bg-[#E8E3DD] flex items-center justify-center p-8">
+    <div class="bg-white shadow-md rounded-lg p-8 max-w-md w-full">
+      <div id="statusMessage" class="hidden text-white text-sm p-3 rounded-lg mb-4 text-center"></div>
+
+      <h1 class="text-2xl font-bold text-center text-gray-800 mb-6">Login</h1>
+      <form id="loginForm">
+        <div class="mb-4">
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" placeholder="Digite seu e-mail" 
+                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" 
+                required>
+        </div>
+        <div class="mb-4">
+          <label for="password" class="block text-sm font-medium text-gray-700">Senha</label>
+          <input type="password" id="password" name="password" placeholder="Digite sua senha" 
+                class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm" 
+                required>
+        </div>
+        <div id="serverError" class="hidden bg-red-500 text-white text-sm p-3 rounded-lg mb-4 text-center"></div>
+        <div class="mb-4">
+          <label for="userType" class="block text-sm font-medium text-gray-700">Tipo de Usuário</label>
+          <select id="userType" name="userType" 
+                  class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+            <option value="cliente">Cliente</option>
+            <option value="master">Usuário Master</option>
+          </select>
+        </div>
+        <button type="submit" 
+                class="w-full bg-[#2A661E] hover:bg-[#21E020] text-white font-medium py-2 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+          Entrar
+        </button>
+      </form>
+      <p class="text-sm text-center text-gray-600 mt-4">
+        <a href="#" class="text-blue-500 hover:underline">Esqueceu sua senha?</a>
+      </p>
+    </div>
+  </main>
+  <nav id="mobile-menu" class="hidden bg-white border-t border-gray-200 fixed bottom-0 left-0 w-full z-50">
+    <div class="flex justify-around items-center py-4">
+      <a href="/index.html" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+        <span class="material-symbols-outlined"> home </span>
+        <span class="text-sm">Home</span>
+      </a>
+      <a href="https://bento.me/limounada" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+        <span class="material-symbols-outlined"> folder_open </span>
+        <span class="text-sm">Projetos</span>
+      </a>
+      <a href="sobre.html" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+        <span class="material-symbols-outlined"> person </span>
+        <span class="text-sm">Sobre</span>
+      </a>
+      <a href="skill.html" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+        <span class="material-symbols-outlined"> school </span>
+        <span class="text-sm">Skill</span>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgh8DyMzGOeK01ZipsN2ubfv3e6YRKE84mjc5YSopOp4Zkww/viewform?pli=1" target="_blank" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+        <span class="material-symbols-outlined"> paid </span>
+        <span class="text-sm">Orçamento</span>
+      </a>
+    </div>
+  </nav>
+</body>
+</html>

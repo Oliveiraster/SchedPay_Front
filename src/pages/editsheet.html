@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edição de Sheet</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="/src/service/editsheet.js" defer></script>
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen p-6">
+    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+        <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-6">Edição de Sheet</h1>
+        <form id="sheetForm">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label for="nomeClient" class="block text-gray-700 font-semibold mb-1">Nome do Cliente</label>
+                    <input type="text" id="nomeClient" name="nomeClient" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+                </div>
+
+                <div>
+                    <label for="totalValue" class="block text-gray-700 font-semibold mb-1">Valor Total</label>
+                    <input type="number" id="totalValue" name="totalValue" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required step="0.01">
+                </div>
+
+                <div>
+                    <label for="installments" class="block text-gray-700 font-semibold mb-1">Número de Parcelas</label>
+                    <input type="number" id="installments" name="installments" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+                </div>
+
+                <div>
+                    <label for="deliveryTime" class="block text-gray-700 font-semibold mb-1">Data de Entrega</label>
+                    <input type="date" id="deliveryTime" name="deliveryTime" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+                </div>
+
+                <div>
+                    <label for="amountPaid" class="block text-gray-700 font-semibold mb-1">Valor Pago</label>
+                    <input type="number" id="amountPaid" name="amountPaid" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required step="0.01">
+                </div>
+
+                <div>
+                    <p class="block text-gray-700 font-semibold mb-1">Status do Projeto</p>
+                    <button type="button" name="projectStatus" id="statusButton" class="w-full py-3 rounded-lg bg-red-500 text-white font-bold hover:bg-green-600 focus:ring focus:ring-green-300">
+                        <span id="statusText">Marcar como Concluído</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="mt-6">
+                <label for="allowedEmails" class="block text-gray-700 font-semibold mb-1">Emails Permitidos</label>
+                <input type="text" id="allowedEmails" name="allowedEmails" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" placeholder="Email1, Email2, ...">
+            </div>
+
+            <div class="mt-8 flex py-4 justify-center gap-4">
+                <button 
+                id="back-btn" 
+                class="px-4 py-2 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-200"
+                > Voltar
+                </button>
+
+                <button type="submit" class="bg-yellow-900 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-500 focus:ring focus:ring-blue-300">
+                    Editar
+                </button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

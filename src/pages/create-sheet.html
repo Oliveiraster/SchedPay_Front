@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module"  src="/src/service/createsheet.js"defer ></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded shadow-md">
+        <h1 class="text-2xl font-bold text-center mb-6">Criação de Sheet</h1>
+        <form id="sheetForm">
+            <div class="mb-4">
+                <label for="nomeClient" class="block text-gray-700">Nome do Cliente</label>
+                <input type="text" id="nomeClient" name="nomeClient" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="totalValue" class="block text-gray-700">Valor Total</label>
+                <input type="number" id="totalValue" name="totalValue" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded" required step="0.01">
+            </div>
+
+            <div class="mb-4">
+                <label for="installments" class="block text-gray-700">Número de Parcelas</label>
+                <input type="number" id="installments" name="installments" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="deliveryTime" class="block text-gray-700">Data de Entrega</label>
+                <input type="date" id="deliveryTime" name="deliveryTime" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded" required>
+            </div>
+
+            <div class="mb-4">
+                <label for="amountPaid" class="block text-gray-700">Valor Pago</label>
+                <input type="number" id="amountPaid" name="amountPaid" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded" required step="0.01">
+            </div>
+
+            <div class="mb-4">
+                <label for="allowedEmails" class="block text-gray-700">Emails Permitidos</label>
+                <input type="text" id="allowedEmails" name="allowedEmails" class="w-full px-4 py-2 mt-2 border border-gray-300 rounded" placeholder="Email1, Email2, ..." />
+            </div>
+
+            <div class="flex justify-center">
+                <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded">Criar Sheet</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
