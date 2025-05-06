@@ -4,26 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
-  <style>
-    @media (max-width: 500px) {
-    nav {
-        display: none !important; 
-    }
-}
 
-@media (max-width: 500px) {
-    nav#mobile-menu {
-        display: block !important;
-        color: white;
-        text-align: center;
-        padding: 5px 0;
-    }
-}
-
-footer.mobile-menu {
-    display: none; 
-}
-  </style>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="/src/service/login.js" defer></script>
   <link rel="stylesheet" href="/src/css/menu.css"> 
@@ -32,7 +13,7 @@ footer.mobile-menu {
 </head>
 <body class="bg-[#E8E3DD]">
   <nav class="bg-white py-4 text-white flex flex-wrap justify-around items-center px-6 border-b border-[#2A661E]">
-
+    <!-- Logo e Nome -->
     <div class="flex items-center space-x-4">
       <!-- <img src="logo.png" alt="Logo Limounada" class="w-10 h-10"> -->
       <a href="https://bento.me/limounada" class="text-xl font-bold text-[#2A661E] hover:text-[#41E920] whitespace-nowrap">
@@ -40,12 +21,53 @@ footer.mobile-menu {
       </a>
     </div>
   
-    <div class="flex flex-wrap space-x-4 md:space-x-6 mt-4 md:mt-0">
-      <a href="/index.html" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Home</a>
-      <a href="https://bento.me/limounada" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Projetos</a>
-      <a href="sobre.html" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Sobre</a>
-      <a href="skill.html" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Skill</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgh8DyMzGOeK01ZipsN2ubfv3e6YRKE84mjc5YSopOp4Zkww/viewform?pli=1" target="_blank" class="text-sm md:text-base hover:text-[#41E920] text-[#2A661E]">Orçamento</a>
+    <!-- Menu -->
+    <div class="flex items-center space-x-6">
+      <a href="/index.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group"> 
+        <span class="material-symbols-outlined">home</span>
+        <span class="ml-1 hidden md:block">Home</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Home
+        </div>
+      </a>
+      <a href="https://bento.me/limounada" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined">folder_open</span>
+        <span class="ml-1 hidden md:block">Projetos </span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Projetos
+        </div>
+      </a>
+      <a href="/src/pages/sobre.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined"> person </span>
+        <span class="ml-1 hidden md:block">Sobre</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Sobre
+        </div>
+      </a>
+      <a href="/src/pages/skill.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group" >
+        <span class="material-symbols-outlined"> school </span>
+        <span class="ml-1 hidden md:block">Skill</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Skill
+        </div>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgh8DyMzGOeK01ZipsN2ubfv3e6YRKE84mjc5YSopOp4Zkww/viewform?pli=1" target="_blank" 
+      class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined"> paid </span>
+        <span class="ml-1 hidden md:block">Orçaamento</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Login
+        </div>
+      </a>
+      
+      <!-- Ícone de Login -->
+      <a href="/src/pages/login.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined">login</span>
+        <span class="ml-1 hidden md:block">Login</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Login
+        </div>
+      </a>
     </div>
   </nav>
 
@@ -87,7 +109,7 @@ footer.mobile-menu {
     </div>
   </main>
   <nav id="mobile-menu" class="hidden bg-white border-t border-gray-200 fixed bottom-0 left-0 w-full z-50">
-    <div class="flex justify-around items-center py-4">
+    <div class="flex justify-around items-center py-1">
       <a href="/index.html" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
         <span class="material-symbols-outlined"> home </span>
         <span class="text-sm">Home</span>

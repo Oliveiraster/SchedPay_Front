@@ -1,67 +1,158 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edição de Sheet</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/src/css/menu.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <script type="module" src="/src/service/editsheet.js" defer></script>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-gray-100 min-h-screen p-6">
-    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-        <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-6">Edição de Sheet</h1>
-        <form id="sheetForm">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label for="nomeClient" class="block text-gray-700 font-semibold mb-1">Nome do Cliente</label>
-                    <input type="text" id="nomeClient" name="nomeClient" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+<body class="bg-[#E8E3DD]">
+  <nav class="bg-white py-4 text-white flex flex-wrap justify-around items-center px-6 border-b border-[#2A661E]">
+    <!-- Logo e Nome -->
+    <div class="flex items-center space-x-4">
+      <!-- <img src="logo.png" alt="Logo Limounada" class="w-10 h-10"> -->
+      <a href="https://bento.me/limounada" class="text-xl font-bold text-[#2A661E] hover:text-[#41E920] whitespace-nowrap">
+        Limounada
+      </a>
+    </div>
+  
+    <!-- Menu -->
+    <div class="flex items-center space-x-6">
+      <a href="/index.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group"> 
+        <span class="material-symbols-outlined">home</span>
+        <span class="ml-1 hidden md:block">Home</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Home
+        </div>
+      </a>
+      <a href="https://bento.me/limounada" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined">folder_open</span>
+        <span class="ml-1 hidden md:block">Projetos </span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Projetos
+        </div>
+      </a>
+      <a href="/src/pages/sobre.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined"> person </span>
+        <span class="ml-1 hidden md:block">Sobre</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Sobre
+        </div>
+      </a>
+      <a href="/src/pages/skill.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group" >
+        <span class="material-symbols-outlined"> school </span>
+        <span class="ml-1 hidden md:block">Skill</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Skill
+        </div>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfgh8DyMzGOeK01ZipsN2ubfv3e6YRKE84mjc5YSopOp4Zkww/viewform?pli=1" target="_blank" 
+      class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined"> paid </span>
+        <span class="ml-1 hidden md:block">Orçaamento</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Login
+        </div>
+      </a>
+      
+      <!-- Ícone de Login -->
+      <a href="/src/pages/login.html" class="relative flex items-center text-sm md:text-base hover:text-[#41E920] text-[#2A661E] group">
+        <span class="material-symbols-outlined">login</span>
+        <span class="ml-1 hidden md:block">Login</span>
+        <div class="absolute left-0 -bottom-8 hidden group-hover:block bg-[#2A661E] text-white text-xs rounded px-2 py-1 shadow-lg">
+          Login
+        </div>
+      </a>
+    </div>
+  </nav>
+    
+    <main class="flex items-center justify-center min-h-[90vh]">
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg">
+            <h1 class="text-3xl font-extrabold text-center text-blue-600 mb-6">Edição de Sheet</h1>
+            <form id="sheetForm">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="nomeClient" class="block text-gray-700 font-semibold mb-1">Nome do Cliente</label>
+                        <input type="text" id="nomeClient" name="nomeClient" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+                    </div>
+    
+                    <div>
+                        <label for="totalValue" class="block text-gray-700 font-semibold mb-1">Valor Total</label>
+                        <input type="number" id="totalValue" name="totalValue" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required step="0.01">
+                    </div>
+    
+                    <div>
+                        <label for="installments" class="block text-gray-700 font-semibold mb-1">Número de Parcelas</label>
+                        <input type="number" id="installments" name="installments" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+                    </div>
+    
+                    <div>
+                        <label for="deliveryTime" class="block text-gray-700 font-semibold mb-1">Data de Entrega</label>
+                        <input type="date" id="deliveryTime" name="deliveryTime" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
+                    </div>
+    
+                    <div>
+                        <label for="amountPaid" class="block text-gray-700 font-semibold mb-1">Valor Pago</label>
+                        <input type="number" id="amountPaid" name="amountPaid" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required step="0.01">
+                    </div>
+    
+                    <div>
+                        <p class="block text-gray-700 font-semibold mb-1">Status do Projeto</p>
+                        <button type="button" name="projectStatus" id="statusButton" class="w-full py-3 rounded-lg bg-red-500 text-white font-bold hover:bg-green-600 focus:ring focus:ring-green-300">
+                            <span id="statusText">Marcar como Concluído</span>
+                        </button>
+                    </div>
                 </div>
-
-                <div>
-                    <label for="totalValue" class="block text-gray-700 font-semibold mb-1">Valor Total</label>
-                    <input type="number" id="totalValue" name="totalValue" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required step="0.01">
+    
+                <div class="mt-6">
+                    <label for="allowedEmails" class="block text-gray-700 font-semibold mb-1">Emails Permitidos</label>
+                    <input type="text" id="allowedEmails" name="allowedEmails" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" placeholder="Email1, Email2, ...">
                 </div>
-
-                <div>
-                    <label for="installments" class="block text-gray-700 font-semibold mb-1">Número de Parcelas</label>
-                    <input type="number" id="installments" name="installments" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
-                </div>
-
-                <div>
-                    <label for="deliveryTime" class="block text-gray-700 font-semibold mb-1">Data de Entrega</label>
-                    <input type="date" id="deliveryTime" name="deliveryTime" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required>
-                </div>
-
-                <div>
-                    <label for="amountPaid" class="block text-gray-700 font-semibold mb-1">Valor Pago</label>
-                    <input type="number" id="amountPaid" name="amountPaid" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" required step="0.01">
-                </div>
-
-                <div>
-                    <p class="block text-gray-700 font-semibold mb-1">Status do Projeto</p>
-                    <button type="button" name="projectStatus" id="statusButton" class="w-full py-3 rounded-lg bg-red-500 text-white font-bold hover:bg-green-600 focus:ring focus:ring-green-300">
-                        <span id="statusText">Marcar como Concluído</span>
+    
+                <div class="mt-8 flex py-4 justify-center gap-4">
+                    <button 
+                    id="back-btn" 
+                    class="px-4 py-2 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-200"
+                    > Voltar
+                    </button>
+    
+                    <button type="submit" class="bg-yellow-900 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-500 focus:ring focus:ring-blue-300">
+                        Salvar
                     </button>
                 </div>
-            </div>
+            </form>
+        </div>
+    </main>
+    <nav id="mobile-menu" class="hidden bg-white border-t border-gray-200 fixed bottom-0 left-0 w-full z-50">
+        <div class="flex justify-around items-center py-1">
+          <a href="/index.html" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+            <span class="material-symbols-outlined"> home </span>
+            <span class="text-sm">Home</span>
+          </a>
+          <a href="https://bento.me/limounada" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+            <span class="material-symbols-outlined"> folder_open </span>
+            <span class="text-sm">Projetos</span>
+          </a>
+          <a href="sobre.html" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+            <span class="material-symbols-outlined"> person </span>
+            <span class="text-sm">Sobre</span>
+          </a>
+          <a href="skill.html" class="flex flex-col items-center text-[#2A661E] hover:text-[#41E920]">
+            <span class="material-symbols-outlined"> school </span>
+            <span class="text-sm">Skill</span>
+          </a>
+          <a href="index.html" class="flex flex-col items-center text-[#2A661E] hover:text-red-500">
+            <span class="material-symbols-outlined"> logout</span>
+            <span class="text-sm">Logout</span>
+          </a>
+        </div>
+    </nav>
+    
 
-            <div class="mt-6">
-                <label for="allowedEmails" class="block text-gray-700 font-semibold mb-1">Emails Permitidos</label>
-                <input type="text" id="allowedEmails" name="allowedEmails" class="w-full px-4 py-3 border rounded-lg focus:ring focus:ring-blue-300" placeholder="Email1, Email2, ...">
-            </div>
-
-            <div class="mt-8 flex py-4 justify-center gap-4">
-                <button 
-                id="back-btn" 
-                class="px-4 py-2 bg-blue-900 text-white font-semibold rounded-lg shadow-md hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75 transition duration-200"
-                > Voltar
-                </button>
-
-                <button type="submit" class="bg-yellow-900 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-yellow-500 focus:ring focus:ring-blue-300">
-                    Editar
-                </button>
-            </div>
-        </form>
-    </div>
 </body>
+
+
 </html>

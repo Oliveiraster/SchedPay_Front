@@ -1,10 +1,10 @@
-@media (max-width: 500px) {
+@media (max-width: 580px) {
     nav {
         display: none !important; 
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 580px) {
     nav#mobile-menu {
         display: block !important;
         color: white;
